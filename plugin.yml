@@ -1,0 +1,7 @@
+name: UltimateArmor
+main: georgianYT\UltimateArmor\Main
+author: georgianYT
+description: Plugin to make yours armors Ultra cheat
+version: 0.1
+api: [3.0.0, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12, 4.0.0]
+website: https://github.com/georgianYT
