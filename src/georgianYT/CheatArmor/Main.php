@@ -13,8 +13,6 @@ use pocketmine\item\Item;
 use pocketmine\inventory\PlayerInventory;
 use pocketmine\inventory\ArmorInventory;
 
-//Coded by georgianYT THX my bro.
-
 class Main extends PluginBase implements Listener{
 
 	public function onEnable() {
