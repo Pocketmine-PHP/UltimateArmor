@@ -1,6 +1,6 @@
 <?php
   
-namespace georgianYT\CheatArmor;
+namespace georgianYt\CheatArmor;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -8,86 +8,67 @@ use pocketmine\scheduler\PluginTask;
 use pocketmine\utils\TextFormat as TF;
 use pocketmine\event\entity\EntityArmorChangeEvent;
 use pocketmine\Player;
+use pocketmine\entity\EffectInstance;
 use pocketmine\entity\Effect;
 use pocketmine\item\Item;
 use pocketmine\inventory\PlayerInventory;
 use pocketmine\inventory\ArmorInventory;
 
+
 class Main extends PluginBase implements Listener{
 
 	public function onEnable() {
-    $this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->getServer()->getLogger()->info(TF::GREEN . $this->prefix . TF::YELLOW . " Plugin enabled by georgianYT");
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
   }
 
   public function onLoad() {
-    $this->getServer()->getLogger()->info(TF::GREEN . "Loading look to new version on https://github.com/georgianYT/UltimateArmor...");
+    	$this->getLogger()->info(TF::GREEN . "Loading...");
   }
 
-  public function onDisable() {
-		$this->getServer()->getLogger()->info(TF::GREEN . $this->prefix . TF::YELLOW . " Plugin disabled");
-	}
-
   public function onArmorChange(EntityArmorChangeEvent $ev){
-    $player = $ev->getEntity();
+  	$player = $ev->getEntity();
     $Nid = $ev->getNewItem()->getID();
     $Oid = $ev->getOldItem()->getID();
 
     if($player instanceof Player){
-      //Chain Helmet
-      if($Nid === 302){
-        $effect = Effect::getEffect(16);
-        $effect->setVisible(false);
-        $effect->setAmplifier(0);
-        $effect->setDuration(9999999);
-        $player->addEffect($effect);
+    //Helmet
+    if($Nid === 302){
+ $eff = new EffectInstance(Effect::getEffect(Effect::RESISTANCE) , 2 * 999999, 2, true);
+$player->addEffect($eff);
       
-        $effect1 = Effect::getEffect(5);
-        $effect1->setVisible(false);
-        $effect1->setAmplifier(0);
-        $effect1->setDuration(9999999);
-        $player->addEffect($effect1);
-      
-      }elseif($Oid === 302){
-        $player->removeEffect(16);
-        $player->removeEffect(5);
-      }
+    }elseif($Oid === 302){
+      $player->removeEffect(11);
+    }
     
-      //Chain Chestplate
-      if($Nid === 303){
-        $effect = Effect::getEffect(21);
-        $effect->setVisible(false);
-        $effect->setAmplifier(4);
-        $effect->setDuration(9999999);
-        $player->addEffect($effect);
+    //Chestplate
+    if($Nid === 303){
+ $eff = new EffectInstance(Effect::getEffect(Effect::STRENGTH) , 1 * 999999, 1, true);
+$player->addEffect($eff);
       
-      }elseif($Oid === 303){
-        $player->removeEffect(21);
-      }
+    }elseif($Oid === 303){
+      $player->removeEffect(5);
+    }
     
-      //Chain Leggings
-      if($Nid === 304){
-        $effect = Effect::getEffect(11);
-        $effect->setVisible(false);
-        $effect->setAmplifier(1);
-        $effect->setDuration(9999999);
-        $player->addEffect($effect);
+    //Leggings
+    if($Nid === 304){
+ $eff = new EffectInstance(Effect::getEffect(Effect::HEALTH_BOOST) , 5 * 99999, 5, true);
+$player->addEffect($eff);
       
-      }elseif($Oid === 304){
-        $player->removeEffect(11);
-      }
+    }elseif($Oid === 304){
+      $player->removeEffect(21);
+    }
     
-      //Chain Boots
-      if($Nid === 305){
-        $effect = Effect::getEffect(3);
-        $effect->setVisible(false);
-        $effect->setAmplifier(1);
-        $effect->setDuration(9999999);
-        $player->addEffect($effect);
+    //boots
+    if($Nid === 305){
+ $eff = new EffectInstance(Effect::getEffect(Effect::SPEED) , 1 * 999999, 1, true);
+$player->addEffect($eff);
+ $eff = new EffectInstance(Effect::getEffect(Effect::FIRE_RESISTANCE) , 2 * 999999, 2, true);
+$player->addEffect($eff);
       
-      }elseif($Oid === 305){
-        $player->removeEffect(3);
-      }
+    }elseif($Oid === 305){
+      $player->removeEffect(1);
+      $player->removeEffect(12);
     }
   }
+}
 }
