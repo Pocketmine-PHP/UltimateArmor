@@ -3,5 +3,5 @@ main: georgianYT\CheatArmor\Main
 authors: georgianYT and Pocketmine-PHP
 description: Plugin to make yours armors Ultra cheat perfect for Factions servers and MiniGames
 version: 0.2
-api: [3.0.0, 3.0.0-ALPHA7, 3.0.0-ALPHA8, 3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12, 4.0.0]
+api: [3.0.0, 3.2.0]
 website: https://github.com/georgianYT
