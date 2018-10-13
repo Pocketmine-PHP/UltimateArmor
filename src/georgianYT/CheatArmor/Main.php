@@ -1,6 +1,6 @@
 <?php
   
-namespace georgianYt\CheatArmor;
+namespace georgianYT\CheatArmor;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
