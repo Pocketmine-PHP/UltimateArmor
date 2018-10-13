@@ -5,7 +5,7 @@ A cheatless Armor xD
 #### BY : https://github.com/Pocketmine-PHP
 ##### This Armor give ou effect when you equip it
 ## Basics configs
-#    //Helmet
+    //Helmet
     if($Nid === 302){
  $eff = new EffectInstance(Effect::getEffect(Effect::RESISTANCE) , 2 * 999999, 2, true);
 $player->addEffect($eff);
